@@ -1,0 +1,9 @@
+CompileFlags:
+  CompilationDatabase: .
+  Add:
+    - -I/usr/local/cuda-13.3/targets/x86_64-linux/include
+    - --cuda-gpu-arch=sm_120
+
+Diagnostics:
+  ClangTidy:
+    FastCheckFilter: None

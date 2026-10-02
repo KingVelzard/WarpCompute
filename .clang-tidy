@@ -1,0 +1,86 @@
+Checks: >
+  clang-diagnostic-*,
+  clang-analyzer-*,
+
+  modernize-pass-by-value,
+  modernize-use-emplace,
+  modernize-avoid-bind,
+  modernize-avoid-c-arrays,
+  modernize-use-auto,
+  modernize-use-using,
+  modernize-use-nullptr,
+  modernize-use-override,
+  modernize-use-nodiscard,
+  modernize-use-default-member-init,
+  modernize-use-equals-default,
+  modernize-use-equals-delete,
+  modernize-use-transparent-functors,
+  modernize-loop-convert,
+  modernize-use-ranges,
+  modernize-use-std-format,
+  modernize-shrink-to-fit,
+
+  readability-const-return-type,
+  readability-make-member-function-const,
+  readability-container-size-empty,
+  readability-qualified-auto,
+  readability-simplify-boolean-expr,
+  readability-use-anyofallof,
+  readability-magic-numbers,
+
+  performance-move-const-arg,
+  performance-unnecessary-copy-initialization,
+  performance-unnecessary-value-param,
+  performance-avoid-endl,
+
+  cppcoreguidelines-prefer-member-initializer,
+  cppcoreguidelines-pro-type-member-init,
+  cppcoreguidelines-rvalue-reference-param-not-moved,
+
+  bugprone-use-after-move,
+  bugprone-unchecked-optional-access,
+  bugprone-unused-return-value,
+  bugprone-move-forwarding-reference,
+  bugprone-exception-escape,
+
+  # concurrency — directly relevant to your lock-free queue
+  concurrency-mt-unsafe,
+
+  # bugprone additions
+  bugprone-easily-swappable-parameters,  # catches foo(int width, int height) swapped at callsite
+  bugprone-narrowing-conversions,         # int -> float silent truncation
+  bugprone-signed-char-misuse,
+  bugprone-string-constructor,
+  bugprone-suspicious-memset-usage,
+  bugprone-too-small-loop-variable,       # catches loop var too small for range
+
+  # cppcoreguidelines additions
+  cppcoreguidelines-pro-type-const-cast,
+  cppcoreguidelines-pro-type-reinterpret-cast,  # important for CUDA boundary code
+  cppcoreguidelines-slicing,
+  cppcoreguidelines-special-member-functions,   # rule of 5 enforcement
+
+  # misc
+  misc-const-correctness,
+  misc-use-anonymous-namespace,           # static -> anonymous namespace in cpp files
+  misc-no-recursion
+
+HeaderFileExtensions:
+  - h
+  - hpp
+  - cuh
+
+ImplementationFileExtensions:
+  - cpp
+  - cu
+
+SystemHeaders: false
+
+CheckOptions:
+  readability-magic-numbers.IgnoredIntegerValues: '0;1;2;4;8;16;32;64;128;256;512;1024'
+  readability-magic-numbers.IgnoredFloatingPointValues: '0.0;1.0;0.5'
+  readability-qualified-auto.AddConstToQualified: true
+  modernize-pass-by-value.IncludeStyle: google
+  performance-unnecessary-value-param.IncludeStyle: google
+  cppcoreguidelines-rvalue-reference-param-not-moved.AllowPartialMove: 'true'
+
