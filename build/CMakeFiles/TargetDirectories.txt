@@ -1,4 +1,0 @@
-/mnt/c/Users/wicke/OneDrive/Documents/Code/GPUSchedulingServer/build/CMakeFiles/cuda_kernels.dir
-/mnt/c/Users/wicke/OneDrive/Documents/Code/GPUSchedulingServer/build/CMakeFiles/host_app.dir
-/mnt/c/Users/wicke/OneDrive/Documents/Code/GPUSchedulingServer/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/wicke/OneDrive/Documents/Code/GPUSchedulingServer/build/CMakeFiles/rebuild_cache.dir
